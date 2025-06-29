@@ -40,7 +40,10 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section
+      id="services"
+      className="py-20 bg-gradient-to-br from-slate-50 to-blue-50"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">

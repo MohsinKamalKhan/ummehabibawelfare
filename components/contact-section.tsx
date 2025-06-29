@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Phone, MapPin, CreditCard, Building, Hash, User } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Phone, MapPin, CreditCard, Building, Hash, User } from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -10,9 +10,12 @@ export default function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">Donate via Online Banking</h3>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              Donate via Online Banking
+            </h3>
             <p className="text-xl text-slate-300 mb-8">
-              Make a secure donation through online banking using our official bank details below
+              Make a secure donation through online banking using our official
+              bank details below
             </p>
           </div>
 
@@ -29,22 +32,34 @@ export default function ContactSection() {
                 <div className="flex items-start space-x-4">
                   <User className="w-6 h-6 text-amber-600 mt-1" />
                   <div>
-                    <p className="font-bold text-lg text-slate-700">Account Title:</p>
-                    <p className="text-xl text-slate-800 font-semibold">Umm-e-Habiba Welfare Trust</p>
+                    <p className="font-bold text-lg text-slate-700">
+                      Account Title:
+                    </p>
+                    <p className="text-xl text-slate-800 font-semibold">
+                      Umm-e-Habiba Welfare Trust
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <Hash className="w-6 h-6 text-amber-600 mt-1" />
                   <div>
-                    <p className="font-bold text-lg text-slate-700">Account Number:</p>
-                    <p className="text-2xl text-slate-800 font-mono font-bold">201966385</p>
+                    <p className="font-bold text-lg text-slate-700">
+                      Account Number:
+                    </p>
+                    <p className="text-2xl text-slate-800 font-mono font-bold">
+                      201966385
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <Building className="w-6 h-6 text-amber-600 mt-1" />
                   <div>
-                    <p className="font-bold text-lg text-slate-700">Bank Name:</p>
-                    <p className="text-xl text-slate-800 font-semibold">United Bank Limited</p>
+                    <p className="font-bold text-lg text-slate-700">
+                      Bank Name:
+                    </p>
+                    <p className="text-xl text-slate-800 font-semibold">
+                      United Bank Limited
+                    </p>
                     <p className="text-lg text-slate-600">Wahdat Road Branch</p>
                   </div>
                 </div>
@@ -61,12 +76,20 @@ export default function ContactSection() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <p className="font-bold text-lg mb-2">For Donation Queries:</p>
+                  <p className="font-bold text-lg mb-2">
+                    For Donation Queries:
+                  </p>
                   <div className="space-y-2">
-                    <a href="tel:042-37428389" className="block text-xl font-semibold hover:underline">
+                    <a
+                      href="tel:042-37428389"
+                      className="block text-xl font-semibold hover:underline"
+                    >
                       042-37428389
                     </a>
-                    <a href="tel:0302-6889992" className="block text-xl font-semibold hover:underline">
+                    <a
+                      href="tel:0302-6889992"
+                      className="block text-xl font-semibold hover:underline"
+                    >
                       0302-6889992
                     </a>
                   </div>
@@ -81,7 +104,8 @@ export default function ContactSection() {
                 </div>
                 <div className="pt-4">
                   <p className="text-sm opacity-90">
-                    Our team is available to assist you with your donations and answer any questions about our programs.
+                    Our team is available to assist you with your donations and
+                    answer any questions about our programs.
                   </p>
                 </div>
               </CardContent>
@@ -89,9 +113,12 @@ export default function ContactSection() {
           </div>
 
           <div className="text-center">
-            <h4 className="text-2xl font-bold mb-4">Need Help with Your Donation?</h4>
+            <h4 className="text-2xl font-bold mb-4">
+              Need Help with Your Donation?
+            </h4>
             <p className="text-slate-300 mb-6">
-              Contact our team for assistance with online banking or any donation-related queries
+              Contact our team for assistance with online banking or any
+              donation-related queries
             </p>
             <Button
               onClick={() => window.open("tel:042-37428389")}
@@ -105,5 +132,5 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

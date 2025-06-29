@@ -16,6 +16,7 @@ const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
 
+
 export const metadata = {
   metadataBase: new URL(defaultUrl),
   title: "Umm-e-Habiba Welfare Trust",
@@ -30,6 +31,7 @@ export const metadata = {
   },
   manifest: "/favicon/web-app-manifest-192x192.png",
 };
+
 
 export default function RootLayout({
   children,

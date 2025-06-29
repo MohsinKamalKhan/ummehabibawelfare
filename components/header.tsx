@@ -107,9 +107,7 @@ export default function Header({ onNavigate }: HeaderProps) {
             <Button
               variant="ghost"
               size="icon"
-              className={`md:hidden ${
-                isScrolled ? "text-slate-800" : "text-white"
-              }`}
+              className={`md:hidden text-slate-800`}
             >
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle menu</span>

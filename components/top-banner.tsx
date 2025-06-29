@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Phone, Mail, Heart } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Phone, Mail, Heart } from "lucide-react";
+import Link from "next/link";
 
 export default function TopBanner() {
   return (
@@ -20,7 +20,10 @@ export default function TopBanner() {
             </div>
           </div>
           <Link href="/donate">
-            <Button size="sm" className="bg-slate-800 hover:bg-slate-700 text-white">
+            <Button
+              size="sm"
+              className="bg-slate-800 hover:bg-slate-700 text-white"
+            >
               <Heart className="w-4 h-4 mr-1" />
               Donate Now
             </Button>
@@ -28,5 +31,5 @@ export default function TopBanner() {
         </div>
       </div>
     </div>
-  )
+  );
 }

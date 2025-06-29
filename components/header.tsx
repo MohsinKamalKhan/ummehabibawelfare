@@ -46,10 +46,10 @@ export default function Header({ onNavigate }: HeaderProps) {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 bg-white py-2 shadow-md" `}
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 bg-white  shadow-md" `}
     >
       <TopBanner />
-      <div className="mt-2 container flex items-center justify-between max-w-full px-4 md:px-6 lg:px-8">
+      <div className="my-1 container flex items-center justify-between max-w-full px-4 md:px-6 lg:px-8">
         <Link href="/" className="flex items-center">
           <div className="relative h-12 w-12 overflow-hidden">
             <Image

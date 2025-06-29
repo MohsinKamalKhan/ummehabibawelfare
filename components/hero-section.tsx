@@ -33,10 +33,10 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       </div>
 
       {/* Centered Content Container */}
+
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center text-center text-white space-y-6">
-            {/* Logo */}
             <div className="flex items-center justify-center mb-2">
               <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
                 <Image
@@ -47,8 +47,6 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 />
               </div>
             </div>
-
-            {/* Main Heading */}
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 Serving Humanity for
@@ -57,16 +55,12 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 Over 20 Years
               </h2>
             </div>
-
-            {/* Description */}
             <div className="max-w-4xl mx-auto">
               <p className="text-lg sm:text-xl md:text-2xl text-slate-200 leading-relaxed">
                 Providing free Iftar to thousands during Ramadan and supporting
                 widows, orphans, and underprivileged families across Lahore
               </p>
             </div>
-
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/donate">
                 <Button
@@ -83,7 +77,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 onClick={() => onNavigate("#about")}
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 w-full sm:w-auto"
+                className="border-white text-black hover:bg-white hover:text-slate-900 px-8 py-3 w-full sm:w-auto"
               >
                 Learn More
               </Button>
@@ -101,11 +95,11 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       </div>
 
       {/* Improved transition to content */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 z-20">
+      {/* <div className="absolute bottom-0 h-24 w-full z-20">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
-          className="absolute bottom-0 left-0 w-full h-full"
+          className="absolute bottom-0 left-0"
         >
           <path
             fill="#ffffff"
@@ -113,7 +107,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 }

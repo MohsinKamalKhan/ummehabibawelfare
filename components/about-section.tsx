@@ -1,141 +1,134 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Users, GraduationCap, Home } from "lucide-react"
-import { motion, Variants } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Image from "next/image";
 
 export default function AboutSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
+  const services = [
+    {
+      title: "Emergency Relief",
+      description:
+        "Providing immediate assistance during natural disasters and emergencies to affected communities.",
+      image: "/images/Emergency Relief.jpg",
     },
-  }
-
-  const itemVariants: Variants = {
-  hidden: { y: 50, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut" as const, 
+    {
+      title: "Healthcare Services",
+      description:
+        "Operating medical camps and providing healthcare facilities to underserved populations.",
+      image: "/images/Healthcare Services.jpg",
     },
-  },
-};
-
-  const cardVariants = {
-    hidden: { y: 50, opacity: 0, scale: 0.9 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut" as const,
-      },
+    {
+      title: "Education Programs",
+      description:
+        "Supporting educational initiatives and providing scholarships to deserving students.",
+      image: "/images/Education Programs.jpg",
     },
-  }
+    {
+      title: "Clean Water Access",
+      description:
+        "Installing water pumps and ensuring clean water access in remote areas.",
+      image: "/images/Clean Water Access.jpg",
+    },
+    {
+      title: "Orphan Care",
+      description:
+        "Providing comprehensive care and support for orphaned children.",
+      image: "/images/Orphan Care.jpg",
+    },
+    {
+      title: "Women Empowerment",
+      description:
+        "Supporting widows and women through skill development and financial assistance.",
+      image: "/images/Women Empowerment.jpg",
+    },
+    {
+      title: "Food Security",
+      description:
+        "Distributing food packages and organizing community kitchens for the needy.",
+      image: "/images/Food Security.jpg",
+    },
+    {
+      title: "Community Development",
+      description:
+        "Building community centers and promoting social welfare activities.",
+      image: "/images/Community Development.jpg",
+    },
+  ];
 
   return (
-    <section id="about" className="py-20 bg-white" ref={ref}>
+    <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div
-          className="max-w-4xl mx-auto text-center mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <motion.h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6" variants={itemVariants}>
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
             About Our Mission
-          </motion.h3>
-          <motion.p className="text-lg text-slate-600 leading-relaxed" variants={itemVariants}>
-            Founded by Maulana Ubaid Ullah Qasmi in 2001, Umm E Habiba Welfare Trust has been serving the
-            underprivileged in Pakistan for over 20 years. With a dedicated team of 60+ volunteers, we provide aid and
-            relief through various programs including our annual Ramadan Iftar at Jamia Ashrafia Lahore, where thousands
-            of people from across Lahore come to break their fast together.
-          </motion.p>
-        </motion.div>
+          </h3>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Founded by Maulana Ubaid Ullah Qasmi in 2001, Umm E Habiba Welfare
+            Trust has been serving the underprivileged in Pakistan for over 20
+            years. With a dedicated team of 60+ volunteers, we provide aid and
+            relief through various programs including our annual Ramadan Iftar
+            at Jamia Ashrafia Lahore, where thousands of people from across
+            Lahore come to break their fast together.
+          </p>
+        </div>
 
-        <motion.div
-          className="grid md:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <motion.div variants={cardVariants} whileHover={{ y: -10, scale: 1.02 }}>
-            <Card className="text-center border-slate-200 hover:shadow-lg transition-all duration-300 h-full">
-              <CardHeader>
-                <motion.div
-                  className="w-16 h-16 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <Users className="w-8 h-8 text-amber-600" />
-                </motion.div>
-                <CardTitle className="text-slate-800">Supporting Families</CardTitle>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {services.map((service, index) => (
+            <Card
+              key={index}
+              className="border-slate-200 hover:shadow-lg transition-shadow h-full"
+            >
+              <div className="relative h-48 overflow-hidden rounded-t-lg">
+                <Image
+                  src={service.image || "/placeholder.svg"}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className={`absolute inset-0 opacity-80`} />
+              </div>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-slate-800 text-lg">
+                  {service.title}
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-slate-600">
-                  Providing essential support to widows, orphans, and families with no income through our comprehensive
-                  welfare programs.
+                <CardDescription className="text-slate-600 text-sm">
+                  {service.description}
                 </CardDescription>
               </CardContent>
             </Card>
-          </motion.div>
+          ))}
+        </div>
 
-          <motion.div variants={cardVariants} whileHover={{ y: -10, scale: 1.02 }}>
-            <Card className="text-center border-slate-200 hover:shadow-lg transition-all duration-300 h-full">
-              <CardHeader>
-                <motion.div
-                  className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <GraduationCap className="w-8 h-8 text-blue-600" />
-                </motion.div>
-                <CardTitle className="text-slate-800">Education First</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-slate-600">
-                  Empowering children through educational support and encouraging them to pursue higher education for a
-                  brighter future.
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <motion.div variants={cardVariants} whileHover={{ y: -10, scale: 1.02 }}>
-            <Card className="text-center border-slate-200 hover:shadow-lg transition-all duration-300 h-full">
-              <CardHeader>
-                <motion.div
-                  className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <Home className="w-8 h-8 text-green-600" />
-                </motion.div>
-                <CardTitle className="text-slate-800">Basic Needs</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-slate-600">
-                  Ensuring access to fundamental necessities like food, shelter, and healthcare for those who need it
-                  most.
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </motion.div>
+        {/* YouTube Video Section */}
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h4 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+              See Our Impact
+            </h4>
+            <p className="text-lg text-slate-600">
+              Watch how we're making a difference in the lives of those who need
+              it most
+            </p>
+          </div>
+          <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
+            <iframe
+              src="https://www.youtube.com/embed/l9WH62Zod4o"
+              title="Umm-e-Habiba Welfare Trust Video"
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }

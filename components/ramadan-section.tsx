@@ -28,7 +28,7 @@ export default function RamadanSection() {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as const,
+        ease: "easeOut",
       },
     },
   }
@@ -40,20 +40,9 @@ export default function RamadanSection() {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as const,
+        ease: "easeOut",
       },
     },
-  }
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
-  const handleNavClick = (href: string) => {
-    scrollToSection(href)
   }
 
   return (
@@ -179,7 +168,7 @@ export default function RamadanSection() {
               >
                 <p className="text-sm text-slate-600 mb-3">Support our Ramadan Iftar program:</p>
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button onClick={() => handleNavClick("#donate")} className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold">
+                  <Button className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold">
                     Donate for Ramadan Iftar
                   </Button>
                 </motion.div>
